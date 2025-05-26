@@ -1,13 +1,13 @@
-CREATE TABLE usuarios (
+CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE
 );
 
-CREATE TABLE tarefas (
+CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
-    titulo VARCHAR(255) NOT NULL,
-    descricao TEXT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
     status VARCHAR(50) NOT NULL CHECK (status IN ('pendente', 'concluida')),
-    usuario_id INT REFERENCES usuarios(id) ON DELETE CASCADE
+    user_id INT REFERENCES usuarios(id) ON DELETE CASCADE
 );
