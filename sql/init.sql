@@ -9,5 +9,5 @@ CREATE TABLE tasks (
     title VARCHAR(255) NOT NULL,
     description TEXT,
     status VARCHAR(50) NOT NULL CHECK (status IN ('pendente', 'concluida')),
-    user_id INT REFERENCES usuarios(id) ON DELETE CASCADE
+    user_id INT REFERENCES users(id) ON DELETE CASCADE
 );
