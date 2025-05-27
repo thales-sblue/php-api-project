@@ -11,12 +11,13 @@ class Task
         $this->conn = (new Database())->connect();
     }
 
-    public function createTask($title, $description, $userId)
+    public function createTask($title, $description, $status, $userId)
     {
-        $query = "INSERT INTO tasks (title, description, user_id) VALUES (:title, :description, :user_id)";
+        $query = "INSERT INTO tasks (title, description, status, user_id) VALUES (:title, :description, :status, :user_id)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':description', $description);
+        $stmt->bindValue(':status', $status = 'pendente');
         $stmt->bindParam(':user_id', $userId);
         return $stmt->execute();
     }
