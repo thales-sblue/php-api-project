@@ -36,7 +36,7 @@ class TaskController
                         $data['user_id']
                     );
                     http_response_code(201);
-                    echo json_encode(['message' => 'Task criada com sucesso'], JSON_UNESCAPED_UNICODE);
+                    echo json_encode(['message' => 'Task criada com sucesso!'], JSON_UNESCAPED_UNICODE);
                     break;
 
                 case 'PUT':
@@ -47,7 +47,7 @@ class TaskController
                             $data['title'],
                             $data['description']
                         );
-                        echo json_encode(['message' => 'Task atualizada com sucesso'], JSON_UNESCAPED_UNICODE);
+                        echo json_encode(['message' => 'Task atualizada com sucesso!'], JSON_UNESCAPED_UNICODE);
                     } else {
                         http_response_code(400);
                         echo json_encode(['error' => 'ID da task é obrigatório para atualizar'], JSON_UNESCAPED_UNICODE);
