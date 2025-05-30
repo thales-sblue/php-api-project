@@ -4,7 +4,7 @@
 
 1. Clone este repositório.
 2. Execute `docker-compose up --build`.
-3. Acesse `http://localhost:8000` e veja a mensagem "API está rodando!".
+3. API `http://localhost:8000` 
 
 ## 📦 Banco de Dados
 
